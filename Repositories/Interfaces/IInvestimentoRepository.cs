@@ -4,10 +4,10 @@ namespace WebApi_InvestmentControl.Repositories.Interfaces
 {
     public interface IInvestimentoRepository
     {
-        Task<ResponseModel<List<InvestimentoModel>>> GetByIdAsync(int id);
-        Task<ResponseModel<List<InvestimentoModel>>> GetAllAsync();
-        Task<ResponseModel<List<InvestimentoModel>>> AddAsync(InvestimentoModel investimento);
-        Task<ResponseModel<List<InvestimentoModel>>> UpdateAsync(InvestimentoModel investimento);
-        Task<ResponseModel<List<InvestimentoModel>>> DeleteASync(int id);
+        Task<InvestimentoModel> GetByIdAsync(int id);
+        Task<List<InvestimentoModel>> GetAllAsync();
+        Task AddAsync(InvestimentoModel investimento);
+        Task UpdateAsync(InvestimentoModel investimento);
+        Task DeleteASync(int id);
     }
 }
