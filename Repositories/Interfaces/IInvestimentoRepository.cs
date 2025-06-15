@@ -8,6 +8,6 @@ namespace WebApi_InvestmentControl.Repositories.Interfaces
         Task<List<InvestimentoModel>> GetAllAsync();
         Task AddAsync(InvestimentoModel investimento);
         Task UpdateAsync(InvestimentoModel investimento);
-        Task DeleteASync(int id);
+        Task DeleteAsync(InvestimentoModel investimento);
     }
 }

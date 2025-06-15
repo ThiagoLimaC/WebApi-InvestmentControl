@@ -21,9 +21,8 @@ namespace WebApi_InvestmentControl.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteASync(int id)
-        {
-            InvestimentoModel investimento = await _dbContext.Investimentos.FindAsync(id);
+        public async Task DeleteAsync(InvestimentoModel investimento)
+        {;
             _dbContext.Investimentos.Remove(investimento);
             await _dbContext.SaveChangesAsync();
         }
