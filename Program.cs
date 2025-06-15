@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi_InvestmentControl.Data;
+using WebApi_InvestmentControl.Repositories;
+using WebApi_InvestmentControl.Repositories.Interfaces;
+using WebApi_InvestmentControl.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IInvestimentoRepository, InvestimentoRepository>();
+builder.Services.AddScoped<InvestimentoService>();
 
 var app = builder.Build();
 
